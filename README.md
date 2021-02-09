@@ -1,4 +1,4 @@
-# 2020-covid19vaccines
+# 2021-covid19vaccines
 
 **Live demo** https://ebuddj.github.io/2020-covid19vaccines/
 
@@ -9,6 +9,9 @@ The data is counted as a single dose, and may not equal the total number of peop
 The map shows the number of confirmed cases of the novel coronavirus (COVID-19) in Europe from 1 February 2020 until 26 January 2021 included. The size of the circle reflects the number of Covid-19 vaccines per population.
 
 The data is sources from Our World In Data except for Albania. Albania data comes from the local ministry of health and in Albania the vaccinations officially started on 11 January but the ministry only has daily numbers starting from 27 January. Taking this into account the numbers for Albania are most likely too low.
+
+**ERNO area** 
+* https://ebuddj.github.io/2021-covid19vaccines/#area=erno
 
 **Sources**
 * [Our World In Data](https://ourworldindata.org/covid-vaccinations)
