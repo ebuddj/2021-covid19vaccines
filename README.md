@@ -12,6 +12,7 @@ The size of the circle reflects the number of Covid-19 vaccines per population.
 
 **Sources**
 * [Our World In Data](https://ourworldindata.org/covid-vaccinations)
+* [Ministria e Shendetesise dhe Mbrojtjes Sociale](https://shendetesia.gov.al/?s=Vaksinimi+antiCOVID)
 
 **EBU links**
 * 
