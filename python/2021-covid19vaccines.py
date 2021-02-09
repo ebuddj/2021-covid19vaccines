@@ -67,6 +67,7 @@ for erno_country in erno_countries:
 
 data = {}
 df = df[df['date'] > '2020-12-10']
+# https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
 for country in df.location.unique():
   if country == 'Vatican':
     country = 'Holy See';
