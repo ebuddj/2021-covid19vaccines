@@ -37,7 +37,7 @@ f = '../data/owid-covid-data.csv'
 df = pd.read_csv(f, usecols=['continent','location','date','total_vaccinations_per_hundred'])
 
 # Filter data by row values.
-df = (df[(df['date'] > '2020-12-24') & (df['continent'] == 'Europe')])
+df = df[df['continent'] == 'Europe']
 
 # Convert NaN to None
 # https://stackoverflow.com/questions/28639953/python-json-encoder-convert-nans-to-null-instead/34467382#34467382
@@ -48,10 +48,11 @@ erno_countries = ['Albania','Bosnia and Herzegovina','Bulgaria','Croatia','Hunga
 
 # Loop throught the ERNO countries and create data.
 data = {}
+df_erno = df[df['date'] > '2020-12-24']
 for erno_country in erno_countries:
   previous_value = 0
   data[erno_country] = {'Province_State':erno_country}
-  for index, values in (df[df['location'] == erno_country]).iterrows():
+  for index, values in (df_erno[df_erno['location'] == erno_country]).iterrows():
     if values.total_vaccinations_per_hundred != 0:
       previous_value = values.total_vaccinations_per_hundred
       data[erno_country][values.date] = values.total_vaccinations_per_hundred
@@ -59,14 +60,29 @@ for erno_country in erno_countries:
       data[erno_country][values.date] = previous_value
 
 # Export data.
+# import json
+# data = {'vaccinated':data}
+# with open('../media/data/data_erno.json', 'w') as outfile:
+#   json.dump(data, outfile)
+
+data = {}
+df = df[df['date'] > '2020-12-10']
+for country in df.location.unique():
+  if country == 'Vatican':
+    country = 'Holy See';
+  previous_value = 0
+  data[country] = {'Province_State':country}
+  for index, values in (df[df['location'] == country]).iterrows():
+    if values.total_vaccinations_per_hundred != 0:
+      previous_value = values.total_vaccinations_per_hundred
+      data[country][values.date] = values.total_vaccinations_per_hundred
+    else:
+      data[country][values.date] = previous_value
+
+# Export data.
 import json
 data = {'vaccinated':data}
 with open('../media/data/data.json', 'w') as outfile:
   json.dump(data, outfile)
 
-# Group the number of fires per year and month.
-# https://stackoverflow.com/questions/52182967/python-pandas-group-by-date-and-count
-# df1 = df.groupby([df['date'].dt.year.rename('year'), df['date'].dt.month.rename('month')]).size().reset_index(name='Count')
 
-# https://datatofish.com/export-dataframe-to-csv/
-# df1.to_csv(r'export.csv')

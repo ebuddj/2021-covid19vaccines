@@ -16,7 +16,6 @@ import './../styles/rc-slider-override.css';
 import * as d3 from 'd3';
 
 let interval, g, path;
-const projection = d3.geoAzimuthalEquidistant().center([25,46]).scale(3000);
 
 // https://www.gps-coordinates.net/
 const areaInfo = {
@@ -29,7 +28,12 @@ function getHashValue(key) {
 }
 
 const l = getHashValue('l') ? getHashValue('l') : 'en';
+const area = getHashValue('area') ? getHashValue('area') : '';
 const type = 'vaccinated';
+
+const projection = (area === 'erno') ? d3.geoAzimuthalEquidistant().center([25,46]).scale(3000) :  d3.geoAzimuthalEquidistant().center([33,57]).scale(800);
+const data_file_name = (area === 'erno') ? 'data_erno.json' : 'data.json';
+const multiplier = (area === 'erno') ? 15 : 6;
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +48,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    d3.json('./data/data.json').then((data) => {
+    d3.json('./data/' + data_file_name).then((data) => {
       this.setState((state, props) => ({
         vaccinated:data.vaccinated,
         dates:_.keys(data[type]['Albania']).filter((value, index, arr) => {
@@ -87,6 +91,7 @@ class App extends Component {
         .enter()
         .append('circle')
         .attr('cx', (d, i) => {
+          console.log(d.Province_State)
           return projection([areaInfo[d.Province_State].Long, areaInfo[d.Province_State].Lat])[0];
         })
         .attr('cy', (d, i) => {
@@ -135,11 +140,11 @@ class App extends Component {
         this.setState((state, props) => ({
           total_cases:d[this.state.dates[this.state.year_month_idx]]
         }));
-        return Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * 15;
+        return Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * multiplier;
       });
     g.selectAll('text')
       .style('font-size', (d, i) => {
-        return (Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * 14) + 'px';
+        return (Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * (multiplier - 1)) + 'px';
       })
       .html((d, i) => {
         if (d[this.state.dates[this.state.year_month_idx]] > 0) {
