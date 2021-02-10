@@ -60,10 +60,10 @@ for erno_country in erno_countries:
       data[erno_country][values.date] = previous_value
 
 # Export data.
-# import json
-# data = {'vaccinated':data}
-# with open('../media/data/data_erno.json', 'w') as outfile:
-#   json.dump(data, outfile)
+import json
+data = {'vaccinated':data}
+with open('../media/data/data_erno.json', 'w') as outfile:
+  json.dump(data, outfile)
 
 data = {}
 df = df[df['date'] > '2020-12-10']
