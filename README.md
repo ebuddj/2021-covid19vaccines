@@ -16,7 +16,8 @@ The data is sourced from Our World In Data except for Albania. Albania data come
 * [Ministria e Shendetesise dhe Mbrojtjes Sociale](https://shendetesia.gov.al/?s=Vaksinimi+antiCOVID)
 
 **EBU links**
-* 
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/74611e3f763e7c8321feef8ce5412b40/2021_21004014), 2021-02-10 Europe
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/8366c5ddf499da5ce7aa7801809eac48/2021_21006238), 2021-02-10 ERNO region
 
 **Used by**
 *
