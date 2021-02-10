@@ -6,13 +6,14 @@
 
 This visualisation (map) shows the number coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The data is counted as a single dose, and may not equal the total number of people vaccinated, depending on the specific dose regime (e.g. people receive multiple doses). The size of the circle reflects the number of Covid-19 vaccines per population.
 
-The data is sources from Our World In Data.
+The data is sourced from Our World In Data except for Albania. Albania data comes from the local ministry of health and in Albania the vaccinations officially started on 11 January.
 
 **ERNO area** 
 * https://ebuddj.github.io/2021-covid19vaccines/#area=erno
 
 **Sources**
 * [Our World In Data](https://ourworldindata.org/covid-vaccinations)
+* [Ministria e Shendetesise dhe Mbrojtjes Sociale](https://shendetesia.gov.al/?s=Vaksinimi+antiCOVID)
 
 **EBU links**
 * 
