@@ -4,7 +4,7 @@
 
 ## Cumulative COVID-19 vaccination doses administered per 100 people (EBU)
 
-This visualisation (map) shows the number coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The data is counted as a single dose, and may not equal the total number of people vaccinated, depending on the specific dose regime (e.g. people receive multiple doses). The size of the circle reflects the number of Covid-19 vaccines per population.
+This visualisation (map) shows the number of coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The data is counted as a single dose, and may not equal the total number of people vaccinated, depending on the specific dose regime (e.g. people receive multiple doses). The size of the circle reflects the number of Covid-19 vaccines relative to the population.
 
 The data is sourced from Our World In Data except for Albania. Albania data comes from the local ministry of health and in Albania the vaccinations officially started on 11 January.
 
