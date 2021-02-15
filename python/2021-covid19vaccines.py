@@ -32,8 +32,12 @@ import pandas as pd
 # Import glob for reading files.
 import glob
 
+# Import datetime for getting the current date.
+from datetime import datetime
+
 # Read the file and filter columns.
 f = '../data/owid-covid-data.csv'
+f = 'https://covid.ourworldindata.org/data/owid-covid-data.csv?v=' + str(datetime.date(datetime.now()))
 df = pd.read_csv(f, usecols=['continent','location','date','total_vaccinations_per_hundred'])
 
 # Filter data by row values.
@@ -69,16 +73,19 @@ data = {}
 df = df[df['date'] > '2020-12-10']
 # https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
 for country in df.location.unique():
+  country_data_name = country
   if country == 'Vatican':
-    country = 'Holy See';
+    country_data_name = 'Holy See';
+  if country == 'Isle of Man' or country == 'Faeroe Islands' or country == 'Guernsey' or country == 'Jersey' or country == 'Gibraltar':
+    continue
   previous_value = 0
-  data[country] = {'Province_State':country}
+  data[country_data_name] = {'Province_State':country_data_name}
   for index, values in (df[df['location'] == country]).iterrows():
     if values.total_vaccinations_per_hundred != 0:
       previous_value = values.total_vaccinations_per_hundred
-      data[country][values.date] = values.total_vaccinations_per_hundred
+      data[country_data_name][values.date] = values.total_vaccinations_per_hundred
     else:
-      data[country][values.date] = previous_value
+      data[country_data_name][values.date] = previous_value
 
 # Export data.
 import json
