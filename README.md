@@ -6,7 +6,7 @@
 
 This visualisation (map) shows the number of coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The data is counted as a single dose, and may not equal the total number of people vaccinated, depending on the specific dose regime (e.g. people receive multiple doses). The size of the circle reflects the number of Covid-19 vaccines relative to the population.
 
-The data is sourced from Our World In Data.
+The data is sourced from Our World In Data. It might be that more countries have started the vaccinations but their data is not available via Our World In Data.
 
 **ERNO area** 
 * https://ebuddj.github.io/2021-covid19vaccines/#area=erno
