@@ -29,13 +29,11 @@
 # Load the Pandas libraries with alias pd.
 import pandas as pd
 
-# Import glob for reading files.
-import glob
-
 # Import datetime for getting the current date.
 from datetime import datetime
 
-from urllib.request import Request, urlopen  # Python 3
+# Import request for adding headers to our request.
+from urllib.request import Request, urlopen
 
 # Read the file and filter columns.
 # https://stackoverflow.com/questions/62278538/pd-read-csv-produces-httperror-http-error-403-forbidden/62278737#62278737
