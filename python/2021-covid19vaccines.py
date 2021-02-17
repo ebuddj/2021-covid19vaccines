@@ -54,16 +54,20 @@ df = df[df['date'] > '2020-12-10']
 # https://chrisalbon.com/python/data_wrangling/pandas_list_unique_values_in_column/
 for country in df.location.unique():
   country_data_name = country
+  # Change Vatican to Holy See because that corresponds with the map data.
   if country == 'Vatican':
     country_data_name = 'Holy See';
+  # Remove administrative areas as they are not countries.
   if country == 'Isle of Man' or country == 'Faeroe Islands' or country == 'Guernsey' or country == 'Jersey' or country == 'Gibraltar':
     continue
   previous_value = 0
   data[country_data_name] = {'Province_State':country_data_name}
   for index, values in (df[df['location'] == country]).iterrows():
+    # If the value is not zero, fill the data.
     if values.total_vaccinations_per_hundred != 0:
       previous_value = values.total_vaccinations_per_hundred
       data[country_data_name][values.date] = values.total_vaccinations_per_hundred
+    # If the value is zero, fill the data with the previous value.
     else:
       data[country_data_name][values.date] = previous_value
 
