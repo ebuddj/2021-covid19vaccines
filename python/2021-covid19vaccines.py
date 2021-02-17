@@ -29,17 +29,16 @@
 # Load the Pandas libraries with alias pd.
 import pandas as pd
 
-# Import datetime for getting the current date.
-from datetime import datetime
-
 # Import request for adding headers to our request.
 from urllib.request import Request, urlopen
 
 # Read the file and filter columns.
 # https://stackoverflow.com/questions/62278538/pd-read-csv-produces-httperror-http-error-403-forbidden/62278737#62278737
-req = Request('https://covid.ourworldindata.org/data/owid-covid-data.csv?v=' + str(datetime.date(datetime.now())))
+url ='https://covid.ourworldindata.org/data/owid-covid-data.csv'
+req = Request(url)
 req.add_header('User-Agent', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:77.0) Gecko/20100101 Firefox/77.0')
-df = pd.read_csv(urlopen(req), usecols=['continent','location','date','total_vaccinations_per_hundred'])
+content = urlopen(req)
+df = pd.read_csv(content, usecols=['continent','location','date','total_vaccinations_per_hundred'])
 
 # Filter data by row values.
 df = df[df['continent'] == 'Europe']
