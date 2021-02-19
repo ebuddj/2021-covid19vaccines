@@ -65,6 +65,10 @@ for country in df.location.unique():
     # If the value is not zero, fill the data.
     if values.total_vaccinations_per_hundred != 0:
       previous_value = values.total_vaccinations_per_hundred
+      # Data format to be like following
+      # data[Finland][2020-12-31] = 3.1
+      # data[Finland][2021-01-01] = 3.1
+      # data[Finland][2021-01-02] = 3.3
       data[country_data_name][values.date] = values.total_vaccinations_per_hundred
     # If the value is zero, fill the data with the previous value.
     else:
