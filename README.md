@@ -20,6 +20,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/12d440f302c20b654d7e7304357ad775/2021_21007189), 2021-02-16 Europe
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/12d440f302c20b654d7e7304357ad775/2021_21007190), 2021-02-16 ERNO region, Cancelled
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/36e3a50da439fbb82d00d3656b482f7e/2021_21007212), 2021-02-16 ERNO region
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/69eb029fd2ea54386086c51dbd332358/2021_21009005), 2021-02-25 Europe
 
 **Used by**
 *
