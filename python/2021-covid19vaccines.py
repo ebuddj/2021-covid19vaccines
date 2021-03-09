@@ -56,7 +56,7 @@ for country in df.location.unique():
   # Change Vatican to Holy See because that corresponds with the map data.
   if country == 'Vatican':
     country_data_name = 'Holy See';
-  # Remove administrative areas as they are not countries.
+  # Skip administrative areas as they are not countries.
   if country == 'Isle of Man' or country == 'Faeroe Islands' or country == 'Guernsey' or country == 'Jersey' or country == 'Gibraltar':
     continue
   previous_value = 0
@@ -87,11 +87,11 @@ erno_countries = ['Albania','Bosnia and Herzegovina','Bulgaria','Croatia','Hunga
 
 # Loop throught the ERNO countries and create data.
 data = {}
-df_erno = df[df['date'] > '2020-12-24']
+df = df[df['date'] > '2020-12-24']
 for erno_country in erno_countries:
   previous_value = 0
   data[erno_country] = {'Province_State':erno_country}
-  for index, values in (df_erno[df_erno['location'] == erno_country]).iterrows():
+  for index, values in (df[df['location'] == erno_country]).iterrows():
     if values.total_vaccinations_per_hundred != 0:
       previous_value = values.total_vaccinations_per_hundred
       data[erno_country][values.date] = values.total_vaccinations_per_hundred
