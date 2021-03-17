@@ -31,7 +31,7 @@ const type = 'vaccinated';
 
 const projection = (area === 'erno') ? d3.geoAzimuthalEquidistant().center([25,46]).scale(3000) :  d3.geoAzimuthalEquidistant().center([33,57]).scale(800);
 const data_file_name = (area === 'erno') ? 'data_erno.json' : 'data.json';
-const multiplier = (area === 'erno') ? 15 : 6;
+const multiplier = (area === 'erno') ? 15 : 5;
 
 class App extends Component {
   constructor(props) {
@@ -118,7 +118,7 @@ class App extends Component {
         .attr('class', style.text)
         .attr('text-anchor', 'middle')
         .attr('x', '50%')
-        .attr('y', '95%');
+        .attr('y', '7%');
         let date = this.state.dates[this.state.year_month_idx].split('-');
         this.text.html('' + date[2] + '.' + date[1] + '.' + date[0]);
     });
@@ -144,7 +144,10 @@ class App extends Component {
         return (Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * (multiplier - 1)) + 'px';
       })
       .html((d, i) => {
-        if (d[this.state.dates[this.state.year_month_idx]] > 0) {
+        if (this.state.year_month_idx >= (this.state.dates.length - 1)) {
+          return parseInt(d[this.state.dates[this.state.year_month_idx]]);
+        }
+        else if (d[this.state.dates[this.state.year_month_idx]] > 0) {
           return areaInfo[d.Province_State].abbr;
         }
         else {
@@ -190,12 +193,16 @@ class App extends Component {
       }), this.changeAreaAttributes);
       if (this.state.year_month_idx >= (this.state.dates.length - 1)) {
         clearInterval(interval);
+        g.selectAll('text')
+          .html((d, i) => {
+            return parseInt(d[this.state.dates[this.state.year_month_idx]]);
+          });
         setTimeout(() => {
           this.setState((state, props) => ({
             total_cases:0,
             year_month_idx:0
           }), this.createInterval);
-        }, 2000);
+        }, 4000);
       }
     }, 500);
   }
