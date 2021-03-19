@@ -23,7 +23,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/69eb029fd2ea54386086c51dbd332358/2021_21009005), 2021-02-25 Europe
 
 **Used by**
-*
+* [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188)
 
 ## How to use
 
