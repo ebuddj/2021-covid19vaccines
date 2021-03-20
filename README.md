@@ -24,6 +24,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 
 **Used by**
 * [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188)
+* [PR/Poland](https://www.facebook.com/PolskieRadio24pl/posts/1873917669424464)
 * [PR/Poland](https://www.youtube.com/watch?v=pH7OOJq2RAc)
 
 ## How to use
