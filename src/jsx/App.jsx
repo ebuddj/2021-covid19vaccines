@@ -39,15 +39,14 @@ class App extends Component {
     this.state = {
       data:{},
       dates:[],
-      total_cases:0,
-      total_vaccinated:0,
+      total:0,
       year_month_idx:0
     }
   }
   componentDidMount() {
     d3.json('./data/' + data_file_name).then((data) => {
       this.setState((state, props) => ({
-        vaccinated:data.vaccinated,
+        data:data[type],
         dates:_.keys(data[type]['Albania']).filter((value, index, arr) => {
           return !(value === 'Province_State');
         })
@@ -82,7 +81,7 @@ class App extends Component {
           return this.getAreaColor(d.properties.NAME);
         });
 
-      let data = Object.keys(this.state[type]).map(i => this.state[type][i]);
+      let data = Object.keys(this.state.data).map(i => this.state.data[i]);
 
       g.selectAll('circle').data(data)
         .enter()
@@ -134,7 +133,7 @@ class App extends Component {
     g.selectAll('circle')
       .attr('r', (d, i) => {
         this.setState((state, props) => ({
-          total_cases:d[this.state.dates[this.state.year_month_idx]]
+          total:d[this.state.dates[this.state.year_month_idx]]
         }));
         return Math.sqrt(d[this.state.dates[this.state.year_month_idx]]) * multiplier;
       });
@@ -155,8 +154,8 @@ class App extends Component {
       });
   }
   getAreaColor(area) {
-    if (this.state[type][area] !== undefined) {
-      if (this.state[type][area][this.state.dates[this.state.year_month_idx]] > 0) {
+    if (this.state.data[area] !== undefined) {
+      if (this.state.data[area][this.state.dates[this.state.year_month_idx]] > 0) {
         return '#d5d5d5';
       }
       else {
@@ -174,7 +173,7 @@ class App extends Component {
   }
   onSliderChange(value) {
     this.setState((state, props) => ({
-      total_cases:0,
+      total:0,
       year_month_idx:value
     }), this.changeAreaAttributes);
   }
@@ -187,7 +186,7 @@ class App extends Component {
     this.changeAreaAttributes();
     interval = setInterval(() => {
       this.setState((state, props) => ({
-        total_cases:0,
+        total:0,
         year_month_idx:this.state.year_month_idx + 1
       }), this.changeAreaAttributes);
       if (this.state.year_month_idx >= (this.state.dates.length - 1)) {
