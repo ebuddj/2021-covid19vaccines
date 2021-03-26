@@ -72,9 +72,6 @@ class App extends Component {
       g.selectAll('path').data(topojson.feature(topology, topology.objects.europe).features)
         .enter()
         .append('path')
-        .datum({type: "LineString", coordinates: 
-                [[-5, 40], [-5, 50], [10, 50], [10, 40], [-5, 40]] // points in decimal degrees
-               })
         .attr('d', path)
         .attr('class', style.path)
         .style('stroke', (d, i) => {
