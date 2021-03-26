@@ -72,6 +72,9 @@ class App extends Component {
       g.selectAll('path').data(topojson.feature(topology, topology.objects.europe).features)
         .enter()
         .append('path')
+        .datum({type: "LineString", coordinates: 
+                [[-5, 40], [-5, 50], [10, 50], [10, 40], [-5, 40]] // points in decimal degrees
+               })
         .attr('d', path)
         .attr('class', style.path)
         .style('stroke', (d, i) => {
@@ -81,6 +84,11 @@ class App extends Component {
           return this.getAreaColor(d.properties.NAME);
         });
 
+      g.append('path').datum({type:'Polygon',properties:{'NAME':'Kosovo'},coordinates:constants.kosovo})
+        .attr('d', path)
+        .attr('fill', '#f5f5f5')
+        .attr('class', style.kosovo)
+        
       let data = Object.keys(this.state.data).map(i => this.state.data[i]);
 
       g.selectAll('circle').data(data)
