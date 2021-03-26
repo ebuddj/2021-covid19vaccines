@@ -13,6 +13,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 
 **Sources**
 * [Our World In Data](https://ourworldindata.org/covid-vaccinations)
+* [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 
 **EBU links**
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/95c70a5e81e20d16d004799724a8ad91/2021_21006236), 2021-02-10 Europe
