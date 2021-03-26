@@ -23,9 +23,9 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/69eb029fd2ea54386086c51dbd332358/2021_21009005), 2021-02-25 Europe
 
 **Used by**
-* [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188)
-* [PR/Poland](https://www.facebook.com/PolskieRadio24pl/posts/1873917669424464)
-* [PR/Poland](https://www.youtube.com/watch?v=pH7OOJq2RAc)
+* [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188) on Twitter
+* [PR/Poland](https://www.facebook.com/PolskieRadio24pl/posts/1873917669424464) on Facebook
+* [PR/Poland](https://www.youtube.com/watch?v=pH7OOJq2RAc) on Youtube
 
 ## How to use
 
