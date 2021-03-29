@@ -22,6 +22,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/12d440f302c20b654d7e7304357ad775/2021_21007190), 2021-02-16 ERNO region, Cancelled
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/36e3a50da439fbb82d00d3656b482f7e/2021_21007212), 2021-02-16 ERNO region
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/69eb029fd2ea54386086c51dbd332358/2021_21009005), 2021-02-25 Europe
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/a748d77a68e4b4d86551810b32a04eb0/2021_10005085), 2021-03-26 ERNO region
 
 **Used by**
 * [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188) on Twitter
