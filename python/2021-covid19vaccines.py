@@ -38,7 +38,7 @@ url ='https://covid.ourworldindata.org/data/owid-covid-data.csv'
 req = Request(url)
 req.add_header('User-Agent', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:77.0) Gecko/20100101 Firefox/77.0')
 content = urlopen(req)
-df = pd.read_csv(content, usecols=['continent','location','date','total_vaccinations_per_hundred'])
+df = pd.read_csv(content, usecols=['continent','location','date','people_fully_vaccinated_per_hundred'])
 
 # Filter data by row values.
 df = df[df['continent'] == 'Europe']
@@ -63,13 +63,13 @@ for country in df.location.unique():
   data[country_data_name] = {'Province_State':country_data_name}
   for index, values in (df[df['location'] == country]).iterrows():
     # If the value is not zero, fill the data.
-    if values.total_vaccinations_per_hundred != 0:
-      previous_value = values.total_vaccinations_per_hundred
+    if values.people_fully_vaccinated_per_hundred != 0:
+      previous_value = values.people_fully_vaccinated_per_hundred
       # Data format to be like following
       # data[Finland][2020-12-31] = 3.1
       # data[Finland][2021-01-01] = 3.1
       # data[Finland][2021-01-02] = 3.3
-      data[country_data_name][values.date] = values.total_vaccinations_per_hundred
+      data[country_data_name][values.date] = values.people_fully_vaccinated_per_hundred
     # If the value is zero, fill the data with the previous value.
     else:
       data[country_data_name][values.date] = previous_value
@@ -92,9 +92,9 @@ for erno_country in erno_countries:
   previous_value = 0
   data[erno_country] = {'Province_State':erno_country}
   for index, values in (df[df['location'] == erno_country]).iterrows():
-    if values.total_vaccinations_per_hundred != 0:
-      previous_value = values.total_vaccinations_per_hundred
-      data[erno_country][values.date] = values.total_vaccinations_per_hundred
+    if values.people_fully_vaccinated_per_hundred != 0:
+      previous_value = values.people_fully_vaccinated_per_hundred
+      data[erno_country][values.date] = values.people_fully_vaccinated_per_hundred
     else:
       data[erno_country][values.date] = previous_value
 
