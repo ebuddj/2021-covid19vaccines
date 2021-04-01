@@ -219,6 +219,7 @@ class App extends Component {
     return (
       <div className={style.plus}>
         <div>
+          <h3>Full Vaccination, total population</h3>
           <Slider
             className={style.slider_container}
             dots={false}
