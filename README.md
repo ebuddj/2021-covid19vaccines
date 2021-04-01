@@ -4,7 +4,7 @@
 
 ## Cumulative COVID-19 Vaccination Doses Administered (EBU)
 
-This visualisation (map) shows the number of coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The following chart shows the share of the total population that has been fully vaccinated against COVID-19. This represents the share that have received all doses prescribed by the vaccination protocol. If a person receives the first dose of a 2-dose vaccine, this metric stays the same. If they receive the second dose, the metric goes up by 1. The size of the circle reflects the number of Covid-19 vaccines relative to the population.
+This visualisation (map) shows the number of coronavirus SARS-CoV-2 related vaccinations by in Europe per country. The data shows the share of the total population that has been fully vaccinated against COVID-19. This represents the share that have received all doses prescribed by the vaccination protocol. If a person receives the first dose of a 2-dose vaccine, this metric stays the same. If they receive the second dose, the metric goes up by 1. The size of the circle reflects the number of Covid-19 vaccines relative to the population.
 
 The data is sourced from Our World In Data. It might be that more countries have started the vaccinations but their data is not available via Our World In Data.
 
@@ -23,6 +23,7 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/36e3a50da439fbb82d00d3656b482f7e/2021_21007212), 2021-02-16 ERNO region
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/69eb029fd2ea54386086c51dbd332358/2021_21009005), 2021-02-25 Europe
 * [News Exchange](https://news-exchange.ebu.ch/item_detail/a748d77a68e4b4d86551810b32a04eb0/2021_10005085), 2021-03-26 ERNO region
+* [News Exchange](https://news-exchange.ebu.ch/item_detail/2047dd76a3df1a680bb150c3ac32c505/2021_10006134), 2021-04-01 Europe
 
 **Used by**
 * [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188) on Twitter
