@@ -29,6 +29,10 @@ The data is sourced from Our World In Data. It might be that more countries have
 * [PR/Poland](https://twitter.com/polskieradiopl/status/1372814785918685188) on Twitter
 * [PR/Poland](https://www.facebook.com/PolskieRadio24pl/posts/1873917669424464) on Facebook
 * [PR/Poland](https://www.youtube.com/watch?v=pH7OOJq2RAc) on Youtube
+* RTP/Portugal on RTP3
+* RTP/Portugal on RTPI
+* RTP/Portugal on RTPI
+* RTS/Serbia on RTS1
 
 ## How to use
 
